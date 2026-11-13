@@ -81,6 +81,7 @@ export function createMailTransport(config: AppConfig): MailTransport {
         text: message.text,
         html: message.html,
         headers: {
+          'X-SES-CONFIGURATION-SET': 'skybate-outreach-tracking',
           'List-Unsubscribe': `<${message.unsubscribeUrl}>`,
           'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
         },
